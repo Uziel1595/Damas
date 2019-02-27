@@ -22,7 +22,7 @@ public class JavaApplication1 {
     public static void main(String[] args) {
         // TODO code application logic here
         poblacion =  new Individuo[10];
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {//CREEACION DE LA POBLACION
             poblacion[i] = new Individuo();
         }
         //poblacion[0].printArr();
@@ -43,7 +43,7 @@ public class JavaApplication1 {
             System.out.println(poblacion[9].puntuacion);
             cruzarPadres();
             calcularPuntos();
-        }while(poblacion[padre1].puntuacion!=8);
+        }while(poblacion[padre1].puntuacion!=8);//DETENMOS CUANDO LA PUNTUACION DE UN PADRE SEA 8
         System.out.println("padres "+padre1+"  "+padre2);
         System.out.println(poblacion[0].puntuacion);
         System.out.println(poblacion[1].puntuacion);
@@ -60,7 +60,7 @@ public class JavaApplication1 {
         System.out.println("Iteraciones  "+contadorDeIteraciones);
         
     }
-    public static void calcularPuntos(){
+    public static void calcularPuntos(){//CALCULAR PUNTOS
         int mayor = -24; //PUNTUACION MINIMA
         int mayor2 = -24;
         for (int i = 0; i < 10; i++) {
@@ -71,7 +71,7 @@ public class JavaApplication1 {
             }
             //System.out.println("-------");
             for (int j = 0; j < 8; j++) {//RECORREMOS LAS COLUMNAS
-                //ADEANTE     COMPROVAMOS LAS DIAGONLES
+                //ADELANTE     COMPROVAMOS LAS DIAGONLES
                 int pr = j;
                 int sg = poblacion[i].arreglo[j];
                 while(pr<=6&&sg<=6){
@@ -124,7 +124,7 @@ public class JavaApplication1 {
                    }
                 }
             }
-            if(poblacion[i].puntuacion>mayor){
+            if(poblacion[i].puntuacion>mayor){//SELECCIONAMOS A LOS PADRES
                 mayor = poblacion[i].puntuacion;
                 padre1 = i;
             }
